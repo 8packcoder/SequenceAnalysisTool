@@ -180,17 +180,24 @@ public class SequenceAnalysisToolWithAPI {
 
     // Creates a codon table for translation (simplified version)
     private static Map<String, String> createCodonTable() {
-        Map<String, String> codonTable = new HashMap<>();
-        codonTable.put("AUG", "M");
-        codonTable.put("UUU", "F");
-        codonTable.put("UUC", "F");
-        codonTable.put("UUA", "L");
-        codonTable.put("UUG", "L");
-        codonTable.put("UCU", "S");
-        codonTable.put("UCC", "S");
-        codonTable.put("UCA", "S");
-        codonTable.put("UCG", "S");
-        // Add more codons as needed
+        Map<String, String> codonTable = Map.ofEntries(
+                Map.entry("UUU", "F"), Map.entry("UUC", "F"), Map.entry("UUA", "L"), Map.entry("UUG", "L"),
+                Map.entry("CUU", "L"), Map.entry("CUC", "L"), Map.entry("CUA", "L"), Map.entry("CUG", "L"),
+                Map.entry("AUU", "I"), Map.entry("AUC", "I"), Map.entry("AUA", "I"), Map.entry("AUG", "M"),
+                Map.entry("GUU", "V"), Map.entry("GUC", "V"), Map.entry("GUA", "V"), Map.entry("GUG", "V"),
+                Map.entry("UCU", "S"), Map.entry("UCC", "S"), Map.entry("UCA", "S"), Map.entry("UCG", "S"),
+                Map.entry("CCU", "P"), Map.entry("CCC", "P"), Map.entry("CCA", "P"), Map.entry("CCG", "P"),
+                Map.entry("ACU", "T"), Map.entry("ACC", "T"), Map.entry("ACA", "T"), Map.entry("ACG", "T"),
+                Map.entry("GCU", "A"), Map.entry("GCC", "A"), Map.entry("GCA", "A"), Map.entry("GCG", "A"),
+                Map.entry("UAU", "Y"), Map.entry("UAC", "Y"), Map.entry("UAA", "*"), Map.entry("UAG", "*"),
+                Map.entry("CAU", "H"), Map.entry("CAC", "H"), Map.entry("CAA", "Q"), Map.entry("CAG", "Q"),
+                Map.entry("AAU", "N"), Map.entry("AAC", "N"), Map.entry("AAA", "K"), Map.entry("AAG", "K"),
+                Map.entry("GAU", "D"), Map.entry("GAC", "D"), Map.entry("GAA", "E"), Map.entry("GAG", "E"),
+                Map.entry("UGU", "C"), Map.entry("UGC", "C"), Map.entry("UGA", "*"), Map.entry("UGG", "W"),
+                Map.entry("CGU", "R"), Map.entry("CGC", "R"), Map.entry("CGA", "R"), Map.entry("CGG", "R"),
+                Map.entry("AGU", "S"), Map.entry("AGC", "S"), Map.entry("AGA", "R"), Map.entry("AGG", "R"),
+                Map.entry("GGU", "G"), Map.entry("GGC", "G"), Map.entry("GGA", "G"), Map.entry("GGG", "G")
+        );
 
         return codonTable;
     }
